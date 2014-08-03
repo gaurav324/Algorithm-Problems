@@ -6,7 +6,7 @@ public class SearchFirstInstance {
     public static void search(int[] numbers, int n) {
         int l = 0;
         int r = numbers.length - 1;
-        int m = (l + r) / 2;
+        int m = l + ((r-l) >> 1);
         
         boolean found = false;
         while(l <= r) {
@@ -22,7 +22,7 @@ public class SearchFirstInstance {
             } else {
                 l = m + 1;
             }
-            m = (l + r) / 2;
+            m = l + ((r-l) >> 1);
         }
         System.out.println(n + " found at " + m);
     }
