@@ -1,3 +1,7 @@
+/*
+ * This is not that neat solution, better look at LargestIncreasing.java in Arrays folder.
+ */
+
 #include<iostream>
 #include<vector>
 
