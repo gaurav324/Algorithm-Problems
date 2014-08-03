@@ -1,5 +1,15 @@
 /**
  * Write a program to check whether a root forms a BST or not.
+ *
+ * Solution1: (Implemented here): Do an in-order traveral, which would tell
+ *            if something is out of order.
+ *
+ * Solution2: Problem with solution 1 is for each root, entire left tree is explored
+ *            first and then we start looking in the right, which is O(n) everytime.
+ *            We can use level wise traversal using queues. Each element in the queue
+ *            would also store min and max value it could have, basically the range.
+ *            If number goes out of range, then shout.
+ *
  */
 
 class Node<Item> {
@@ -16,6 +26,8 @@ class Node<Item> {
 public class IsBST {
     static Integer max = null;
     public static boolean check(Node<Integer> node) {
+        // Kind of do an in-order traversal, which would
+        // tell whether a node is present out of order.
         if (node == null) { return true; }
         
         boolean l_tree=true, r_tree=true;
